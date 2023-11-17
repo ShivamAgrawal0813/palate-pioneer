@@ -13,24 +13,21 @@ export default async function Navbar() {
                     {session && (
                         <>
                             <li>
-                                <Link href={`/home`} className="btn btn-ghost btn-sm">Home</Link>
+                                <Link href={`/recipe-of-the-day`} className="btn btn-ghost btn-sm">Recipe of the Day</Link>
                             </li>
                             <li>
-                                <Link href={`/`} className="btn btn-ghost btn-sm">About</Link>
+                                <Link href={`/search-recipes`} className="btn btn-ghost btn-sm">Search Recipes</Link>
                             </li>
                             <li>
-                                <Link href={`/`} className="btn btn-ghost btn-sm">Recipes</Link>
-                            </li>
-                            <li>
-                                <Link href={`/`} className="btn btn-ghost btn-sm">Nutrition</Link>
+                                <Link href={`/my-palate`} className="btn btn-ghost btn-sm">My Palate</Link>
                             </li>
                         </>)}
                     {session ? (
-                        <li>
+                        <li className={`ml-2`}>
                             <Link href={`/auth/signout`} className="btn btn-primary btn-sm">Sign Out</Link>
                         </li>
                     ) : (
-                        <li>
+                        <li className={`ml-2`}>
                             <Link href={`/auth/signup`} className="btn btn-primary btn-sm">Sign Up</Link>
                         </li>
                     )}

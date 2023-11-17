@@ -10,6 +10,10 @@ const config = {
         remotePatterns: [
             {
                 hostname: "images.media-allrecipes.com",
+            }, {
+                hostname: "geniuskitchen.sndimg.com"
+            }, {
+                hostname: "img.sndimg.com"
             }
         ]
     }
