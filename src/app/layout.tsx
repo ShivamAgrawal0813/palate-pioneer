@@ -9,8 +9,9 @@ import { TRPCReactProvider } from "~/trpc/react";
 import Navbar from "~/app/_components/navbar";
 
 const geologica = Geologica({
-  subsets: ["latin"],
-  variable: "--font-sans",
+    subsets: ['latin'],
+    display: 'swap',
+    adjustFontFallback: false,
 });
 
 export const metadata = {

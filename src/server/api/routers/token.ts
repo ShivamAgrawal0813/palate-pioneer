@@ -14,6 +14,7 @@ export const tokenRouter = createTRPCRouter({
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
         const token = tokenResponse.access_token;
 
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return token;
     }),
 })

@@ -13,7 +13,7 @@ export default async function Navbar() {
                     {session && (
                         <>
                             <li>
-                                <Link href={`/`} className="btn btn-ghost btn-sm">Home</Link>
+                                <Link href={`/home`} className="btn btn-ghost btn-sm">Home</Link>
                             </li>
                             <li>
                                 <Link href={`/`} className="btn btn-ghost btn-sm">About</Link>
