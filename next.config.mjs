@@ -5,6 +5,14 @@
 await import("./src/env.mjs");
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    images: {
+        remotePatterns: [
+            {
+                hostname: "images.media-allrecipes.com",
+            }
+        ]
+    }
+};
 
 export default config;

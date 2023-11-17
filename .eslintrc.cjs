@@ -30,6 +30,12 @@ const config = {
         checksVoidReturn: { attributes: false },
       },
     ],
+    // turn off unsafe call of any
+    "@typescript-eslint/no-unsafe-call": "off",
+    // turn off unsafe member access
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    // turn off unsafe assignment
+    "@typescript-eslint/no-unsafe-assignment": "off",
   },
 };
 

@@ -10,7 +10,6 @@ import bycrypt from "bcryptjs";
 
 import { env } from "~/env.mjs";
 import { db } from "~/server/db";
-import * as console from "console";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`

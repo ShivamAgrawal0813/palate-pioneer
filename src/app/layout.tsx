@@ -1,12 +1,14 @@
 import "~/styles/globals.css";
 
-import { Inter } from "next/font/google";
+import { Geologica } from "next/font/google";
 import { cookies } from "next/headers";
+import { GeistSans } from "geist/font/sans";
+
 
 import { TRPCReactProvider } from "~/trpc/react";
 import Navbar from "~/app/_components/navbar";
 
-const inter = Inter({
+const geologica = Geologica({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -25,7 +27,7 @@ export default function RootLayout({
 
   return (
       <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
+      <body className={`${geologica.className}`}>
       <TRPCReactProvider cookies={cookies().toString()}>
         <Navbar />
         {children}
