@@ -10,6 +10,7 @@ import bycrypt from "bcryptjs";
 
 import { env } from "~/env.mjs";
 import { db } from "~/server/db";
+import * as console from "console";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -39,13 +40,17 @@ declare module "next-auth" {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-      },
-    }),
+    jwt: ({ token, user }) => {
+      if (user?.id) token.sub = user.id;
+      return token;
+    },
+    session: ({ session, token }) => {
+      session.user && (session.user.id = token.sub!);
+      return session;
+    },
+  },
+  session: {
+    strategy: "jwt",
   },
   adapter: PrismaAdapter(db),
   providers: [
