@@ -52,6 +52,9 @@ export default function SearchRecipes() {
   const searchByIngredients =
     api.recipeDb.searchRecipeByIngredient.useMutation();
   const searchRecipeByRegion = api.recipeDb.searchRecipeByRegion.useMutation();
+  const searchRecipeByCalories = api.recipeDb.searchRecipeByCalories.useMutation();
+
+  const [placeHolder, setPlaceHolder] = useState<string>(`Search by Recipe Name`);
 
   const handleSearch = async () => {
     let result;
@@ -67,6 +70,10 @@ export default function SearchRecipes() {
       result = await searchRecipeByRegion.mutateAsync({
         region: convertToTitleCase(searchTerm),
       });
+    }else if (searchBy === `Calories`) {
+        result = await searchRecipeByCalories.mutateAsync({
+            range: searchTerm,
+        });
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -84,15 +91,25 @@ export default function SearchRecipes() {
           className="select select-bordered w-full max-w-xs"
           onChange={(e) => {
             setSearchBy(e.target.value);
+            if (e.target.value === `Recipe Name`) {
+              setPlaceHolder(`Search by Recipe Name`);
+            } else if (e.target.value === `Ingredients`) {
+              setPlaceHolder(`Search by Ingredients`);
+            } else if (e.target.value === `Region`) {
+              setPlaceHolder(`Search by Region`);
+            } else if (e.target.value === `Calories`) {
+              setPlaceHolder(`Search by Calories in format: low:high`);
+            }
           }}
         >
           <option>Recipe Name</option>
           <option>Ingredients</option>
           <option>Region</option>
+          <option>Calories</option>
         </select>
         <input
           className={`input input-bordered w-full`}
-          placeholder={`Search Recipes`}
+          placeholder={placeHolder}
           value={searchTerm}
           onChange={(e) => {
             setSearchTerm(e.target.value);

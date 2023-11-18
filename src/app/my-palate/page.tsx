@@ -55,7 +55,7 @@ export default async function MyPalate() {
         ) : (
           <div className={`space-y-6`}>
             {palates.map((palate) => (
-              <Recipe id={palate.recipeId} key={palate.id} />
+              <Recipe id={palate.recipeId} key={palate.id} addedAt={palate.addedAt} />
             ))}
           </div>
         )}

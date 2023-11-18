@@ -34,6 +34,9 @@ export const palateRouter = createTRPCRouter({
       where: {
         userId: ctx.session.user.id,
       },
+      orderBy: {
+        addedAt: "desc",
+      },
     });
   }),
 });

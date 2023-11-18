@@ -117,4 +117,25 @@ export const recipeDbRouter = createTRPCRouter({
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return recipe;
         }),
+
+    searchRecipeByCalories: protectedProcedure.input(z.object(
+        {
+            range: z.string(),
+        }
+    )).mutation(async ({input}) => {
+        const token = (await api.token.getAccessToken.mutate()) as string;
+
+        const response = await fetch(
+            `https://cosylab.iiitd.edu.in/rdbapihttps://cosylab.iiitd.edu.in/rdbapi/recipeDB/searchRecipeByCalorie/${input.range}`,
+            {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            },
+        );
+        const recipe = await response.json();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+        return recipe;
+    })
 });

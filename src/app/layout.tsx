@@ -1,5 +1,4 @@
 import "~/styles/globals.css";
-import NextTopLoader from "nextjs-toploader";
 
 import { Geologica } from "next/font/google";
 import { cookies } from "next/headers";
@@ -27,7 +26,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geologica.className}`}>
-        <NextTopLoader showSpinner={false} color={"#fbbf24"} />
         <TRPCReactProvider cookies={cookies().toString()}>
           <Navbar />
           {children}
