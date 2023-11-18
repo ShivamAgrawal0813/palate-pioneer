@@ -4,6 +4,7 @@ import {useState} from "react";
 import {api} from "~/trpc/react";
 import Image from "next/image";
 import Link from "next/link";
+import AddToPalateButton from "~/app/_components/add-to-palate-button";
 
 const convertToTitleCase = (str: string) => {
     return str.replace(
@@ -93,12 +94,10 @@ export default function SearchRecipes() {
                                         </p>
                                         <div className={`mt-4`}>
                                             <Link href={`/recipe/${recipe.recipe_id}`}
-                                                  className={`btn btn-sm btn-secondary`}>
+                                                  className={`btn btn-sm btn-secondary mr-2`}>
                                                 View Recipe
                                             </Link>
-                                            <button className={`btn btn-sm btn-primary ml-2`}>
-                                                Add to Palate
-                                            </button>
+                                            <AddToPalateButton size={`btn-sm`} text={`Add to Palate`} recipeId={Number(recipe.recipe_id)}/>
                                         </div>
                                     </div>
                                     <Image src={recipe.img_url} width={300} height={300} alt={recipe.recipe_title}

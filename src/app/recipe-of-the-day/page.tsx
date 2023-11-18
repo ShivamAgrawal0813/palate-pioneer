@@ -1,6 +1,7 @@
 import {api} from "~/trpc/server";
 import Image from "next/image";
 import Link from "next/link";
+import AddToPalateButton from "~/app/_components/add-to-palate-button";
 
 export default async function RecipeOfTheDay() {
 
@@ -35,9 +36,7 @@ export default async function RecipeOfTheDay() {
 
             <div className={`flex items-center justify-around h-[40dvh] `}>
                 <div className={`flex items-center justify-center w-full`}>
-                    <button className={`btn btn-primary`}>
-                        Add This Recipe to your Palate
-                    </button>
+                    <AddToPalateButton text={`Add this Recipe to your Palate`} recipeId={recipeOfTheDay.recipe_id}/>
                 </div>
                 <div
                     className={`text-center w-full border h-full flex flex-col items-center justify-center rounded-xl border-primary`}>
@@ -57,9 +56,6 @@ export default async function RecipeOfTheDay() {
                         <div className={`text-end`}>
                             <p>
                                 Utensils: <span className={`font-bold`}>{recipeOfTheDay.utensils}</span>
-                            </p>
-                            <p>
-                                Processes: <span className={`font-bold`}>{recipeOfTheDay.processes}</span>
                             </p>
                             <p>
                                 Calories: <span className={`font-bold`}>{recipeOfTheDay.calories}</span>

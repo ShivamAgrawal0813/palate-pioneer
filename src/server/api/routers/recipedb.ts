@@ -19,7 +19,7 @@ export const recipeDbRouter = createTRPCRouter({
     }),
 
     fetchRecipe: protectedProcedure.input(z.object({
-        id: z.string()
+        id: z.number()
     })).mutation(async ({input}) => {
 
         const token = await api.token.getAccessToken.mutate() as string;

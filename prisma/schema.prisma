@@ -73,3 +73,10 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Palate {
+  id       Int      @id @default(autoincrement())
+  userId   String
+  recipeId Int
+  addedAt  DateTime @default(now())
+}

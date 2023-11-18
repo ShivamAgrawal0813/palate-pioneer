@@ -13,7 +13,7 @@ export default async function Recipe({
 }) {
 
     const recipe = await api.recipeDb.fetchRecipe.mutate({
-        id: id
+        id: Number(id)
     });
 
     return (
