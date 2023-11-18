@@ -1,6 +1,5 @@
 import { api } from "~/trpc/server";
 import Link from "next/link";
-import AddToPalateButton from "~/app/_components/add-to-palate-button";
 import Image from "next/image";
 
 export default async function Recipe({ id }: { id: number }) {

@@ -3,7 +3,6 @@ import NextTopLoader from "nextjs-toploader";
 
 import { Geologica } from "next/font/google";
 import { cookies } from "next/headers";
-import { GeistSans } from "geist/font/sans";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import Navbar from "~/app/_components/navbar";

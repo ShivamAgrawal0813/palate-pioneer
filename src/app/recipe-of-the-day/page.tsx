@@ -2,6 +2,7 @@ import { api } from "~/trpc/server";
 import Image from "next/image";
 import Link from "next/link";
 import AddToPalateButton from "~/app/_components/add-to-palate-button";
+export const dynamic = 'force-dynamic';
 
 export default async function RecipeOfTheDay() {
   const recipeOfTheDay = await api.recipeDb.fetchRecipeOfTheDay.mutate();

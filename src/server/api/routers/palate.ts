@@ -1,10 +1,5 @@
-import {
-  createTRPCRouter,
-  protectedProcedure,
-  publicProcedure,
-} from "~/server/api/trpc";
+import { createTRPCRouter, protectedProcedure } from "~/server/api/trpc";
 import { z } from "zod";
-import { NextResponse } from "next/server";
 
 export const palateRouter = createTRPCRouter({
   insertPalate: protectedProcedure
