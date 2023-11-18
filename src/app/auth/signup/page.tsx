@@ -3,24 +3,30 @@ import SignupForm from "~/app/_components/signup-form";
 import Link from "next/link";
 
 export default function SignUpPage() {
-    return (
-        <main className="flex min-h-screen">
-            <div className={`relative hidden md:block w-full mt-20 mb-2`}>
-                <Image src={`/food-bg.jpg`} alt={`Food Background`} className={`w-full object-cover rounded-xl ml-2`}
-                       layout={`fill`}/>
-            </div>
-            <div className={`w-full flex flex-col p-8 items-center justify-center`}>
-                <h1 className={`font-bold text-2xl mb-4`}>Sign Up Page</h1>
-                <p className={`text-center text-sm mb-8`}>
-                    Dive into the world of food and discover the best recipes from around the world.
-                </p>
-                <SignupForm/>
-                <p
-                className={`text-center text-sm mt-4`}
-                >
-                    Already have an account? <Link href={`/auth/signin`} className={`text-secondary link`}>Sign-In</Link>
-                </p>
-            </div>
-        </main>
-    )
+  return (
+    <main className="flex min-h-screen">
+      <div className={`relative mb-2 mt-20 hidden w-full md:block`}>
+        <Image
+          src={`/food-bg.jpg`}
+          alt={`Food Background`}
+          className={`ml-2 w-full rounded-xl object-cover`}
+          layout={`fill`}
+        />
+      </div>
+      <div className={`flex w-full flex-col items-center justify-center p-8`}>
+        <h1 className={`mb-4 text-2xl font-bold`}>Sign Up Page</h1>
+        <p className={`mb-8 text-center text-sm`}>
+          Dive into the world of food and discover the best recipes from around
+          the world.
+        </p>
+        <SignupForm />
+        <p className={`mt-4 text-center text-sm`}>
+          Already have an account?{" "}
+          <Link href={`/auth/signin`} className={`link text-secondary`}>
+            Sign-In
+          </Link>
+        </p>
+      </div>
+    </main>
+  );
 }

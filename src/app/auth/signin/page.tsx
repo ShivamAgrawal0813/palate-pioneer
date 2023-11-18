@@ -3,25 +3,29 @@ import Link from "next/link";
 import SigninForm from "~/app/_components/signin-form";
 
 export default function SignInPage() {
-    return (
-        <main className="flex min-h-screen">
-            <div className={`relative hidden md:block w-full mt-20 mb-2`}>
-                <Image src={`/food-bg.jpg`} alt={`Food Background`} className={`w-full object-cover rounded-xl ml-2`}
-                       layout={`fill`}/>
-            </div>
-            <div className={`w-full flex flex-col p-8 items-center justify-center`}>
-                <h1 className={`font-bold text-2xl mb-4`}>Sign In Page</h1>
-                <p className={`text-center text-sm mb-8`}>
-                    Welcome back! Sign in to your account to continue.
-                </p>
-                <SigninForm/>
-                <p
-                    className={`text-center text-sm mt-4`}
-                >
-                    {"Don't"} have an account? <Link href={`/auth/signup`}
-                                                     className={`text-secondary link`}>Sign-Up</Link>
-                </p>
-            </div>
-        </main>
-    )
+  return (
+    <main className="flex min-h-screen">
+      <div className={`relative mb-2 mt-20 hidden w-full md:block`}>
+        <Image
+          src={`/food-bg.jpg`}
+          alt={`Food Background`}
+          className={`ml-2 w-full rounded-xl object-cover`}
+          layout={`fill`}
+        />
+      </div>
+      <div className={`flex w-full flex-col items-center justify-center p-8`}>
+        <h1 className={`mb-4 text-2xl font-bold`}>Sign In Page</h1>
+        <p className={`mb-8 text-center text-sm`}>
+          Welcome back! Sign in to your account to continue.
+        </p>
+        <SigninForm />
+        <p className={`mt-4 text-center text-sm`}>
+          {"Don't"} have an account?{" "}
+          <Link href={`/auth/signup`} className={`link text-secondary`}>
+            Sign-Up
+          </Link>
+        </p>
+      </div>
+    </main>
+  );
 }

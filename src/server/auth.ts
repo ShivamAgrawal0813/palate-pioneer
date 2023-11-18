@@ -81,8 +81,8 @@ export const authOptions: NextAuthOptions = {
         }
 
         const passwordMatch = await bycrypt.compare(
-            credentials.password,
-            hashedPassword,
+          credentials.password,
+          hashedPassword,
         );
 
         if (!passwordMatch) {

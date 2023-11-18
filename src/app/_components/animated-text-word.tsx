@@ -43,7 +43,7 @@ const AnimatedTextWord = ({ text }: { text: string }) => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className={`text-accent text-center`}
+      className={`text-center text-accent`}
     >
       {words.map((word, index) => (
         <motion.span

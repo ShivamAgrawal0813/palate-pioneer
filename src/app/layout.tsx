@@ -1,18 +1,17 @@
 import "~/styles/globals.css";
-import NextTopLoader from 'nextjs-toploader';
+import NextTopLoader from "nextjs-toploader";
 
 import { Geologica } from "next/font/google";
 import { cookies } from "next/headers";
 import { GeistSans } from "geist/font/sans";
 
-
 import { TRPCReactProvider } from "~/trpc/react";
 import Navbar from "~/app/_components/navbar";
 
 const geologica = Geologica({
-    subsets: ['latin'],
-    display: 'swap',
-    adjustFontFallback: false,
+  subsets: ["latin"],
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata = {
@@ -22,20 +21,19 @@ export const metadata = {
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: {
+  children,
+}: {
   children: React.ReactNode;
 }) {
-
   return (
-      <html lang="en">
+    <html lang="en">
       <body className={`${geologica.className}`}>
-      <NextTopLoader showSpinner={false} color={"#fbbf24"} />
-      <TRPCReactProvider cookies={cookies().toString()}>
-        <Navbar />
-        {children}
-      </TRPCReactProvider>
+        <NextTopLoader showSpinner={false} color={"#fbbf24"} />
+        <TRPCReactProvider cookies={cookies().toString()}>
+          <Navbar />
+          {children}
+        </TRPCReactProvider>
       </body>
-      </html>
+    </html>
   );
 }
