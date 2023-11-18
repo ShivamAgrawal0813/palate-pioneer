@@ -1,7 +1,7 @@
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const tokenRouter = createTRPCRouter({
-  getAccessToken: publicProcedure.mutation(async ({ ctx }) => {
+  getAccessToken: publicProcedure.mutation(async ({  }) => {
     const response = await fetch(
       "https://cosylab.iiitd.edu.in/api/auth/realms/bootadmin/protocol/openid-connect/token",
       {

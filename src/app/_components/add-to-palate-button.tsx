@@ -23,7 +23,7 @@ export default function AddToPalateButton({
       onClick={async () => {
         setLoading(true);
         setLoadingText(`Adding to Palate...`);
-        const response = await addToPalate.mutateAsync({
+        await addToPalate.mutateAsync({
           recipeId: recipeId,
         });
 

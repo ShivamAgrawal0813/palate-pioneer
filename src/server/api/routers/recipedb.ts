@@ -3,7 +3,7 @@ import { api } from "~/trpc/server";
 import { z } from "zod";
 
 export const recipeDbRouter = createTRPCRouter({
-  fetchRecipeOfTheDay: protectedProcedure.mutation(async ({ input }) => {
+  fetchRecipeOfTheDay: protectedProcedure.mutation(async ({  }) => {
     const token = (await api.token.getAccessToken.mutate()) as string;
 
     const response = await fetch(
